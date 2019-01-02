@@ -4,12 +4,12 @@ from GeneticAlgorithm import TreePopulation
 
 #variables globales
 
-terminales = [1, 2, 3, 4, 3]
+terminales = [1, 2, 3, 4, 5]
 funciones = ["+", "-", "*", "/"]
 profundidad = 5
-tamano_poblacion = 500
+tamano_poblacion = 700
 solucion = 140
-limite_generacional = 5
+limite_generacional = 20
 fabrica_de_arboles = TreeFactory(funciones, terminales, profundidad)
 cromosomas = []
 for i in range(tamano_poblacion):
@@ -18,5 +18,7 @@ poblacion = TreePopulation(cromosomas, terminales, funciones, limite_generaciona
 poblacion.evolution()
 
 #solucion
-print(poblacion.get_best().value)
-print("valor: " + str(poblacion.get_best().value.evaluate()))
+print("Terminales : " + str(terminales))
+print("Funciones : " + str(funciones))
+print("Ecuación: " + str(poblacion.get_best().value))
+print("Solución encontrada: " + str(poblacion.get_best().value.evaluate()))
